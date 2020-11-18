@@ -1,10 +1,8 @@
 #ifndef TOKENS_H
 #define TOKENS_H
-
-#define ID 1000
-#define MAS 1001
-#define MUL 1002
-#define PARI 1003
-#define PARD 1004
-
+#define ID 1001
+#define PARI 1002
+#define PARD 1003
+#define MAS 1004
+#define MUL 1005
 #endif

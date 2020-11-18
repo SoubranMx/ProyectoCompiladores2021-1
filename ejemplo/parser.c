@@ -1,52 +1,55 @@
 #include "tokens.h"
-#include <stdio.h>
 #include "parser.h"
+#include <stdio.h>
+#include <stdlib.h>
+extern int yylex();
 
-int tokenActual;
+void error(){
+    printf("Error de sintaxis\n");
+    exit(-1);
+}
 
 void E(){
-	T();
-	EP();
+    T();
+    EP();
 }
 
 void EP(){
-	if (tokenActual==MAS){
-		tokenActual = yylex();
-		E();
-	}
+    if(tokenActual==MAS){
+        tokenActual= yylex();
+        E();
+    }
 }
 
 void T(){
-	F();
-	TP();
+    F();
+    TP();
 }
 
 void TP(){
-	if(tokenActual==MUL){
-		tokenActual = yylex();
-		T();
-	}
+    if(tokenActual==MUL){
+        tokenActual= yylex();
+        T();
+    }
 }
 
 void F(){
-	switch(tokenActual){
-		case PARI:
-			tokenActual = yylex();
-			E();
-			if(tokenActual==PARD)
-			tokenActual =yylex();
-			else
-				error();
-			break;
-		case ID:
-			tokenActual = yylex();
-			break;
-		default:
-			error();
-			break;
-	}
-}
-
-void error(){
-	printf("Error de sintaxis\n");
+    switch (tokenActual)
+    {
+    case PARI:
+        tokenActual = yylex();
+        E();
+        if(tokenActual==PARD)
+            tokenActual=yylex();
+        else
+            error();        
+        break;
+    case ID:
+        tokenActual = yylex();
+        break;
+    
+    default:
+        error();
+        break;
+    }
 }
