@@ -1,18 +1,29 @@
-105
-0_1_2_95
-0.
-10.45
-1_9.67_8
-1_9.67_8E6
-1_9.67_8E+6_1
-1_9.67_8E+6_1i
-'cadena33'
-'cadenafa%#%#///'
-true
-false
+package _PaquETE_34;
+var float32 aiDi__2 = 20.;
+const complex64 constante = 1_2.345_3E+16i;
+if (aiDi__2 == true){
+    for(var int8 i=0; i<=2_5; i++){
+        switch(i){
+            case 0:
+                return 0;
+                break;
+            default:
+                break;
+        }
+    }
+}else{
+    struct{ byte _structura};
+    defer i--;
+}
 
-if
-else
-uint8
-uint16
-float32
+var uint suma = i + aiDi__2;
+suma = 32_45. - _flotanteNoDeclarado
+
+const string cadena = 'CadenaJafa;lsdjfasoe56...*/'
+
+!boolean
+
+multiplicacion * declaracion
+
+3_4_2.E6f
+@#

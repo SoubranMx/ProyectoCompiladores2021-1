@@ -9,33 +9,68 @@ int tokens(){
     while((tokenActual=yylex())!=0)
     {
         switch(tokenActual){
+            //Literales
             case lit_ENTERO:
                 printf("<%d, %s>\n",lit_ENTERO, yytext);
                 break;
-
             case lit_FLOTANTE:
                 printf("<%d, %s>\n",lit_FLOTANTE, yytext);
                 break;
-
             case lit_IMAGINARIO:
                 printf("<%d, %s>\n",lit_IMAGINARIO, yytext);
                 break;
-
             case lit_STRING:
                 printf("<%d, %s>\n",lit_STRING, yytext);
                 break;
-
             case lit_BOOL:
                 printf("<%d, %s>\n",lit_BOOL, yytext);
                 break;
+
             //Palabras Reservadas
             case PR_if:
                 printf("<%d, %s>\n",PR_if, yytext);
                 break;
-
             case PR_else:
                 printf("<%d, %s>\n",PR_else, yytext);
                 break;
+            case PR_for:
+                printf("<%d, %s>\n",PR_for, yytext);
+                break;
+            case PR_switch:
+                printf("<%d, %s>\n",PR_switch, yytext);
+                break;
+            case PR_case:
+                printf("<%d, %s>\n",PR_case, yytext);
+                break;
+            case PR_default:
+                printf("<%d, %s>\n",PR_default, yytext);
+                break;
+            case PR_return:
+                printf("<%d, %s>\n",PR_return, yytext);
+                break;
+            case PR_break:
+                printf("<%d, %s>\n",PR_break, yytext);
+                break;
+            case PR_continue:
+                printf("<%d, %s>\n",PR_continue, yytext);
+                break;
+            case PR_var:
+                printf("<%d, %s>\n",PR_var, yytext);
+                break;
+            case PR_const:
+                printf("<%d, %s>\n",PR_const, yytext);
+                break;
+            case PR_package:
+                printf("<%d, %s>\n",PR_package, yytext);
+                break;
+            case PR_defer:
+                printf("<%d, %s>\n",PR_defer, yytext);
+                break;
+            case PR_func:
+                printf("<%d, %s>\n",PR_func, yytext);
+                break;
+
+
             //Tipos de dato
             case TD_UINT8:
                 printf("<%d, %s>\n",TD_UINT8, yytext);
@@ -55,201 +90,125 @@ int tokens(){
             case TD_float32:
                 printf("<%d, %s>\n",TD_float32, yytext);
                 break;
-        }
-    }
-        
-       /* 
-        switch(tok)
-        {
-            case 1:
-                printf("<\\n>\n");
-            	fprintf(yyout,"<\\n> \n");
+            case TD_float64:
+                printf("<%d, %s>\n",TD_float64, yytext);
                 break;
-            case 2:
-                printf("<num, %s > \n",yytext);
-            	fprintf(yyout,"<num, %s > \n",yytext);
-                break;                
-            case 3:
-                printf("<PR, registro>\n");
-            	fprintf(yyout,"<PR, registro>\n");
+            case TD_complex64:
+                printf("<%d, %s>\n",TD_complex64, yytext);
                 break;
-            case 4:
-                printf("<PR, inicio>\n");
-            	fprintf(yyout,"<PR, inicio>\n");
+            case TD_byte:
+                printf("<%d, %s>\n",TD_byte, yytext);
                 break;
-            case 5:
-                printf("<PR, fin>\n");
-            	fprintf(yyout,"<PR, fin>\n");
+            case TD_string:
+                printf("<%d, %s>\n",TD_string, yytext);
                 break;
-            case 6:
-                printf("<PR, func>\n");
-            	fprintf(yyout,"<PR, func>\n");
+            case TD_struct:
+                printf("<%d, %s>\n",TD_struct, yytext);
                 break;
-            case 7:
-                printf("<PR, ent>\n");
-            	fprintf(yyout,"<PR, ent>\n");
+            case TD_bool:
+                printf("<%d, %s>\n",TD_bool, yytext);
                 break;
-            case 8:
-                printf("<PR, real>\n");
-            	fprintf(yyout,"<PR, real>\n");
-                break;      
-            case 9:
-                printf("<PR, dreal>\n");
-            	fprintf(yyout,"<PR, dreal>\n");
-                break;
-            case 10:
-                printf("<PR, car>\n");
-            	fprintf(yyout,"<PR, car>\n");
-                break;
-            case 11:
-                printf("<PR, sin>\n");
-            	fprintf(yyout,"<PR, sin>\n");
-                break;
-            case 12:
-                printf("<PR, Si>\n");
-            	fprintf(yyout,"<PR, Si>\n");
-            	break;
-            case 13:
-                printf("<PR, entonces>\n");
-            	fprintf(yyout,"<PR, entonces>\n");
-            	break;
-            case 14:
-                printf("<PR, sino>\n");
-            	fprintf(yyout,"<PR, sino>\n");
-            	break;
-            case 15:
-                printf("<PR, mientras>\n");
-            	fprintf(yyout,"<PR, mientras>\n");
-            	break;
-            case 16:
-                printf("<PR, hacer>\n");
-            	fprintf(yyout,"<PR, hacer>\n");
-            	break;
-            case 17:
-                printf("<PR, mientras que>\n");
-            	fprintf(yyout,"<PR, mientras que>\n");
-            	break;
-            case 18:
-                printf("<PR, escribir>\n");
-            	fprintf(yyout,"<PR, escribir>\n");
-            	break;
-            case 19:
-                printf("<PR, leer>\n");
-        		fprintf(yyout,"<leer>\n");
-            	break;
-            case 20:
-                printf("<PR, devolver>\n");
-            	fprintf(yyout,"<PR, devolver>\n");
-            	break;
-            case 21:
-                printf("<OPL, oo>\n");
-            	fprintf(yyout,"<OPL, oo>\n");
-            	break;
-            case 22:
-                printf("<OPL, yy>\n");
-            	fprintf(yyout,"<OPL, yy>\n");
-            	break;
-            case 23:
-                printf("<OPL, no>\n");
-            	fprintf(yyout,"<OPL, no>\n");
-            	break;
-            case 24:
-                printf("<PR, verdadero>\n");
-            	fprintf(yyout,"<PR, verdadero>\n");
-            	break;
-            case 25:
-                printf("<PR, falso>\n");
-            	fprintf(yyout,"<PR, falso>\n");
-            	break;
-            case 26:
-                printf("<OPA, := >\n");
-            	fprintf(yyout,"<asignacion, := >\n");
-            	break;
-            case 27:
-                printf("<OPR, < >\n");
-            	fprintf(yyout,"<OPR, < >\n");
-            	break;
-            case 28:
-                printf("<OPR, > >\n");
-            	fprintf(yyout,"<OPR, > >\n");
-            	break;
-            case 29:
-                printf("<OPR, <= >\n");
-            	fprintf(yyout,"<OPR, <= >\n");
-            	break;
-            case 30:
-                printf("<OPR, >= >\n");
-            	fprintf(yyout,"<OPR, >= >\n");
-            	break;
-            case 31:
-                printf("<OPR, == >\n");
-            	fprintf(yyout,"<OPR, == >\n");
-            	break;
-            case 32:
-                printf("<OPR, <> >\n");
-            	fprintf(yyout,"<OPR, <> >\n");
-            	break;
-            case 33:
-                printf("<OP, + >\n");
-            	fprintf(yyout,"<OP, + >\n");
-            	break;
-            case 34:
-                printf("<OP, - >\n");
-            	fprintf(yyout,"<OP, - >\n");
-            	break;
-            case 35:
-                printf("<OP, * >\n");
-            	fprintf(yyout,"<OP, * >\n");
-            	break;
-            case 36:
-                printf("<OP, / >\n");
-            	fprintf(yyout,"<OP, / >\n");
-            	break;
-            case 37:
-                printf("<OP, %s >\n",yytext);
-            	fprintf(yyout,"<OP, %s >\n",yytext);
-            	break;
-            case 38:
-                printf("< ( >\n");
-            	fprintf(yyout,"< ( >\n");
-            	break;
-            case 39:
-                printf("< ) >\n");
-            	fprintf(yyout,"< ) >\n");
-            	break;
-            case 40:
-                printf("< [ >\n");
-            	fprintf(yyout,"< [ >\n");
-            	break;
-            case 41:
-                printf("< ] >\n");
-            	fprintf(yyout,"< ] >\n");
-            	break;
-            case 42:
-                printf("< . >\n");
-            	fprintf(yyout,"< . >\n");
-            	break;
-            case 43:
-                printf("< , >\n");
-            	fprintf(yyout,"< , >\n");
-            	break;
-            case 44:
-                printf("< car, %s > \n",yytext);
-            	fprintf(yyout, "< car, %s > \n",yytext);
-            	break;
-            case 45:
-                printf("< cad, %s > \n",yytext);
-            	fprintf(yyout, "< cad, %s > \n",yytext);
-            	break;
-            case 46:
-                printf("< id, %s > \n",yytext);
-            	fprintf(yyout, "< id, %s > \n",yytext);
-            	break;
+
             
-            	
-        }*/
+            //Token para IDs
+            case id:
+                printf("<%d, %s>\n",id, yytext);
+                break;
+            
 
+            //Tokens para Operaciones Booleanas
+            case OB_or:
+                printf("<%d, %s>\n",OB_or, yytext);
+                break;
+            case OB_and:
+                printf("<%d, %s>\n",OB_and, yytext);
+                break;
+            case OB_equal:
+                printf("<%d, %s>\n",OB_equal, yytext);
+                break;
+            case OB_notequal:
+                printf("<%d, %s>\n",OB_notequal, yytext);
+                break;
+            case OB_minor:
+                printf("<%d, %s>\n",OB_minor, yytext);
+                break;
+            case OB_minorequal:
+                printf("<%d, %s>\n",OB_minorequal, yytext);
+                break;
+            case OB_greater:
+                printf("<%d, %s>\n",OB_greater, yytext);
+                break;
+            case OB_greaterequal:
+                printf("<%d, %s>\n",OB_greaterequal, yytext);
+                break;
+            case OB_negacion:
+                printf("<%d, %s>\n",OB_negacion, yytext);
+                break;
+            case OB_andop:
+                printf("<%d, %s>\n",OB_andop, yytext);
+                break;
+            
 
+            //Tokens para operaciones aritmeticas
+            case OA_suma:
+                printf("<%d, %s>\n",OA_suma, yytext);
+                break;
+            case OA_resta:
+                printf("<%d, %s>\n",OA_resta, yytext);
+                break;
+            case OA_mul:
+                printf("<%d, %s>\n",OA_mul, yytext);
+                break;
+            case OA_div:
+                printf("<%d, %s>\n",OA_div, yytext);
+                break;
+            case OA_mod:
+                printf("<%d, %s>\n",OA_mod, yytext);
+                break;
+            
 
-   // }
-}
+            //Tokens generales
+            case pari:
+                printf("<%d, %s>\n",pari, yytext);
+                break;
+            case pard:
+                printf("<%d, %s>\n",pard, yytext);
+                break;
+             case llavei:
+                printf("<%d, %s>\n",llavei, yytext);
+                break;
+            case llaved:
+                printf("<%d, %s>\n",llaved, yytext);
+                break;
+            case coma:
+                printf("<%d, %s>\n",coma, yytext);
+                break;
+            case puntocoma:
+                printf("<%d, %s>\n",puntocoma, yytext);
+                break;
+            case punto:
+                printf("<%d, %s>\n",punto, yytext);
+                break;
+            case asignacion:
+                printf("<%d, %s>\n",asignacion, yytext);
+                break;
+            case masmas:
+                printf("<%d, %s>\n",masmas, yytext);
+                break;
+            case menosmenos:
+                printf("<%d, %s>\n",menosmenos, yytext);
+                break;
+            case dospuntos:
+                printf("<%d, %s>\n",dospuntos, yytext);
+                break;
+
+            case apuntador:
+                printf("<%d, %s>\n",apuntador, yytext);
+                break;
+            
+            default:
+                printf("Error Lexico  %s\n",yytext);
+                break;
+        }//switch
+    }//while
+}//funcion tokens

@@ -20,7 +20,7 @@ int main(int argc, char** argv){
 
     
     if(tokenActual == 0)
-        printf("la cadena es aceptada\n");
+        printf("\n\nFinalizacion de Analizador Lexico\n");
     
     return 0;
 }

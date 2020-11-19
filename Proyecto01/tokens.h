@@ -15,7 +15,7 @@
 #define PR_const       7011
 #define PR_package     7012
 #define PR_defer       7013
-
+#define PR_func        7014
 
 // Tokens para tipos de dato    1000
 #define TD_UINT8       1001
@@ -30,8 +30,8 @@
 #define TD_string      1010
 #define TD_bool        1011
 #define TD_struct      1012
-#define TD_func        1013
-#define TD_defer       1014
+
+
 
 // Tokens para literales    2000
 #define lit_ENTERO      2001
@@ -71,7 +71,8 @@
 #define masmas      6008    //++
 #define menosmenos  6009    //--
 #define dospuntos   6010    //:
-
+#define llavei      6011    //{
+#define llaved      6012    //}
 
 
 int tokenActual;
