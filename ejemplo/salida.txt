@@ -1,0 +1,49 @@
+<PR, registro>
+<\n> 
+<PR, real>
+< id, abeja > 
+<\n> 
+<PR, car>
+<\n> 
+<PR, real>
+< id, mosca > 
+<\n> 
+<PR, func>
+<PR, real>
+< id, main > 
+< ( >
+<PR, sin>
+< ) >
+<\n> 
+<PR, inicio>
+<\n> 
+< id, abeja > 
+<asignacion, := >
+<num, 10 > 
+<\n> 
+< id, mosca > 
+<asignacion, := >
+<num, 20 > 
+<\n> 
+< id, dato > 
+<asignacion, := >
+< car, 'c' > 
+<\n> 
+<\n> 
+<PR, Si>
+< id, abeja > 
+<OPR, < >
+< id, mosca > 
+<PR, entonces>
+<\n> 
+< id, abeja > 
+<asignacion, := >
+< id, abeja > 
+<OP, + >
+<num, 1 > 
+<\n> 
+<PR, fin>
+<\n> 
+<PR, fin>
+<\n> 
+<\n> 

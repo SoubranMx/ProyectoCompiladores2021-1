@@ -1,4 +1,4 @@
-#include "parser.h"
+#include "tokens.h"
 #include <stdio.h>
 extern FILE *yyin;
 extern int yylex();
@@ -15,7 +15,7 @@ int main(int argc, char** argv){
         return -1;
     }
     yyin = f;
-    tokenActual = yylex();
+    
     tokens();
 
     
