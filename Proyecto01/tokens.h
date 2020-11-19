@@ -75,8 +75,10 @@
 #define llaved      6012    //}
 
 
+//Variable global para leer tokens
 int tokenActual;
 
+//Prototipo para la funcion tokens que lee los tokens
 int tokens(void);
 
 

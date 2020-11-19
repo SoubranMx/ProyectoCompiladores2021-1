@@ -4,6 +4,8 @@
 extern int yylex();
 extern int yytext;
 
+// Estrada Soubran Uriel Alejandro
+// Lee los tokens uno a uno y los imprime en consola de forma < xxxx , tokenleido >
 int tokens(){
     //int tok;
     while((tokenActual=yylex())!=0)

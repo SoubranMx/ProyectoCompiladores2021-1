@@ -18,25 +18,26 @@ imaginarios     {notCientifica}i
 
 caux   [^\'\"\n]*
 car \'{caux}\'
-cad    \"{caux}\"
+/*No se porque no funciona con doble coma*/
+cad    \"{caux}\"   
 
 booleanas   true|false
 espacios    [" "\t\n]*
 
 /*ER Palabras Reservadas*/
-PRif   if
-PRelse   else
-PRfor   for
-PRswitch   switch
-PRcase   case
+PRif        if
+PRelse      else
+PRfor       for
+PRswitch    switch
+PRcase      case
 PRdefault   default
-PRreturn   return
-PRbreak   break
-PRcontinue   continue
-PRvar  var
-PRconst    const
+PRreturn    return
+PRbreak     break
+PRcontinue  continue
+PRvar       var
+PRconst     const
 PRpackage   package
-PRdefer   defer
+PRdefer     defer
 
 /*ER Tipos de Dato*/
 

@@ -1,3 +1,22 @@
+/*
+    Compiladores, Gpo 2, 2021-1
+    Fecha elaboracion: 18/Nov/2020
+
+    Analizador Lexico, Programa 1
+
+    Programado por:
+    Carrillo Dominguez Carlos Daniel
+    Espinoza Vera Alberto
+    Estrada Soubran Uriel Alejandro
+    Guzman Marin Yared
+    
+
+    Forma de compilacion:
+
+    flex main.l
+    gcc main.c tokens.c lex.yy.c -o proy
+    .\proy.exe entrada.txt
+*/
 #include "tokens.h"
 #include <stdio.h>
 extern FILE *yyin;
